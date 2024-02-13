@@ -3,34 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오</title>
+    <!-- CSS -->
     <link href="index.css" rel="stylesheet" type="text/css" />
-    <title>원페이지스크롤</title>
+    <!-- NOTO SANS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <!-- 폰트어썸 -->
+    <script src="https://kit.fontawesome.com/96b5911d82.js" crossorigin="anonymous"></script>
+    <!-- 제이쿼리 -->
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <!-- 스크롤 이벤트 -->
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <!-- 휠 이벤트 -->
+    <script src="js/wheel.js"></script>
 </head>
 <body>
-    <header>
-        <p>어디까지 가봤니?</p>
-        <ul>
-            <li><a href="#eu">Europe</a></li>
-            <li><a href="#us">United States</a></li>
-            <li><a href="#ch">China</a></li>
-            <li><a href="#jp">Japan</a></li>
-        </ul>
+    <header id="header">
+        <div><a href="#"><i class="fa-brands fa-instagram"></i>ihtsyl</a></div>
+        <nav>
+            <ul>
+                <li><a href="#intro">소개</a></li>
+                <li><a href="#project">프로젝트</a></li>
+                <li><a href="#ask">문의</a></li>
+            </ul>
+        </nav>
     </header>
-    <section id="eu">
-        <p>Europe</p>
+    <section id="intro">
+        <div class="container">
+            <p>CHOI<br />YEON SUNG</p>
+            <p>웹 프론트엔드 개발을 공부하고 있는<br /> 개발자 지망생 최연성입니다.</p>
+            <nav><a href="#project"><i class="fa-solid fa-arrow-down"></i>프로젝트</a></nav>
+        </div>
     </section>
-    <section id="us">
-        <p>United States</p>
+    <section id="project">
+        <div class="container">
+            프로젝트섹션
+        </div>
     </section>
-    <section id="ch">
-        <p>China</p>
+    <section id="ask">
+        <div class="container">
+            문의섹션
+        </div>
     </section>
-    <section id="jp">
-        <p>Japan</p>
-    </section>
-    <footer>
-        <p>Copyright 2024 All rights reserved.</p>
-    </footer>
-    <div id="top-btn"><a href="#">TOP</a></div>
+    <script src="index.js"></script>
 </body>
 </html>

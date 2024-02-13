@@ -34,7 +34,7 @@
                     $("html,body").stop().animate({
                         scrollTop: moveTop + 'px'
                     }, {
-                        duration: 600, complete: function () {
+                        duration: 400, complete: function () {
                         }
                     });
                 });
