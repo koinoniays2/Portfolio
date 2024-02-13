@@ -2,7 +2,7 @@
     font-family: 'Sejonghospital';
     src: url('font/Sejong\ hospital\ Light.ttf') format('truetype');
 }
-* {margin: 0; padding: 0; box-sizing: border-box; list-style: none; font-family: "Sejonghospital", "Noto Sans KR", sans-serif; color: #353535;}
+* {margin: 0; padding: 0; box-sizing: border-box; list-style: none; font-family: "Noto Sans KR", "Sejonghospital", sans-serif; color: #353535;}
 a {text-decoration: none; color: inherit;}
 :root {
     --font-transition: font-size 1s ease;
@@ -35,7 +35,7 @@ section {width: 100%; height: 100vh;}
     background: linear-gradient(-45deg, #84fab0, #8fd3f4, #fbc2eb, #8fd3f4);
     background-size: 400% 400%; 
     animation: gradient 5s ease infinite;}
-#intro p:nth-child(1) {font-size: 3rem; font-weight: 900; padding: 12rem 1rem 1rem 1rem; transition: var(--font-transition);}
+#intro p:nth-child(1) {font-size: 3rem; font-weight: bold; padding: 12rem 1rem 1rem 1rem; transition: var(--font-transition);}
 #intro p:nth-child(2) {width: fit-content; font-size: 1.25rem; padding: 0 1rem 1rem 1rem; transition: var(--font-transition);}
 #intro nav {font-size: 1.5rem; position: absolute; bottom: 1rem; left: 50%; transform: translateX(-50%); transition: var(--font-transition);}
 #intro nav i {transform: rotate(30deg); margin-right: 0.5rem;}
