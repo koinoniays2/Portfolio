@@ -10,10 +10,10 @@ header nav ul li {width: 25%; text-align: center; line-height: 60px;
 font-weight: bold; font-size: 1rem;}
 
 section {height: 100vh;}
-#section-eu {background: url("../images/eu.jpg") center; background-size: cover;}
-#section-us {background: url("../images/us.jpg") center; background-size: cover;}
-#section-ch {background: url("../images/ch.jpg") center; background-size: cover;}
-#section-jp {background: url("../images/jp.jpg") center; background-size: cover;}
+#section-eu {background: url("images/eu.jpg") center; background-size: cover;}
+#section-us {background: url("images/us.jpg") center; background-size: cover;}
+#section-ch {background: url("images/ch.jpg") center; background-size: cover;}
+#section-jp {background: url("images/jp.jpg") center; background-size: cover;}
 section h2 {
     text-align: center;
     line-height: 100vh;

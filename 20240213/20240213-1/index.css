@@ -16,10 +16,10 @@ section {
     background-repeat: no-repeat; background-size: cover;}
 section > p {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
     font-size: 3rem; color: #F6F6F6; font-weight: bold;}
-#eu {background-image: url("images/eu.jpg");}
-#us {background-image: url("images/us.jpg");}
-#ch {background-image: url("images/ch.jpg");}
-#jp {background-image: url("images/jp.jpg");}
+#eu {background-image: url("../images/eu.jpg");}
+#us {background-image: url("../images/us.jpg");}
+#ch {background-image: url("../images/ch.jpg");}
+#jp {background-image: url("../images/jp.jpg");}
 
 footer {background-color: #466093;}
 footer > p {padding: 1.5rem; color: #F6F6F6; text-align: center;}
