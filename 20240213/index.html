@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet type:css/text" />
+    <title>원페이지사이트 스크롤링효과</title>
+</head>
+<body>
+    <header>
+        <div id="header-title">
+            <h1>어디까지 가봤니?</h1>
+        </div>
+        <nav id="header-gnb">
+            <ul>
+                <li><a href="#section-eu">Europe</a></li>
+                <li><a href="#section-us">United States</a></li>
+                <li><a href="#section-ch">China</a></li>
+                <li><a href="#section-jp">Japan</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="section-eu"><h2>Europe</h2></section>
+    <section id="section-us"><h2>United States</h2></section>
+    <section id="section-ch"><h2>China</h2></section>
+    <section id="section-jp"><h2>Japan</h2></section>
+    <footer>
+        Copyright 2024 All rights reserved.
+    </footer>
+    <nav id="top-btn">
+        <a href="#">Top</a>
+    </nav>
+    <!-- 자바스크립트 제이쿼리 -->
+    <script src="../js/jquery-2.2.4.min.js"></script>
+    <!-- 스크롤 기능을 위한 자바스크립트 제이쿼리 플러그인 -->
+    <script src="../js/jquery.scrollTo.min.js"></script>
+    <!-- 휠 이벤트 -->
+    <script src="../js/wheel.js"></script>
+    <script>
+        $(function(){
+            $('nav a').click(function(e){
+                $.scrollTo(this.hash || 0, 200); // 속도 조절, 숫자가 작을수록 빠름
+                e.preventDefault();
+            })
+        })
+    </script>
+</body>
+</html>
