@@ -1,6 +1,6 @@
 $(document).ready(function() {
-    $(".fa-bars").click(function(){
-        $("#menu").fadeToggle();
+    $("#toggle-icon").click(function(){
+        $("#menu-nav").fadeToggle();
     });
 
     $('nav a').click(function(e){
