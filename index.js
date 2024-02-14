@@ -5,7 +5,7 @@ $(document).ready(function() {
     });
 
 // 클릭 이벤트
-    $('#menu-nav ul li').hover(function() {
+    $('#menu-nav ul li').click(function() {
         let subMenu = $(this).find('.sub-menu');
         // 서브메뉴가 열려있으면 닫고, 아니면 열기
         if (subMenu.is(':visible')) {
