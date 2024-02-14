@@ -29,7 +29,16 @@
         <nav id="menu-nav">
             <ul>
                 <li><a href="#intro">소개</a></li>
-                <li><a href="#project">프로젝트</a></li>
+                <li>
+                    <a href="#self-project">프로젝트</a>
+                    <nav class="sub-menu">
+                        <ul>
+                            <li><a href="#self-project">개인 프로젝트</a></li>
+                            <li><a href="#school-project">학교 프로젝트</a></li>
+                            <li><a href="#team-project">팀 프로젝트</a></li>
+                        </ul>
+                    </nav>
+                </li>
                 <li><a href="#ask">문의</a></li>
             </ul>
         </nav>
@@ -37,24 +46,51 @@
     <!-- 섹션-1 소개 -->
     <section id="intro">
         <div class="container">
-            <p>CHOI<br />YEON SUNG</p>
-            <p>웹 프론트엔드 개발을 공부하고 있는<br /> 개발자 지망생 최연성입니다.</p>
-            <p><i>2021.06.25</i>&nbsp;&nbsp;&nbsp;SQLD 취득</p>
-            <p><i>2023.11.07~</i> 영진직업전문학교 Open API를 활용한 스마트 웹&앱 콘텐츠실무 개발자 양성과정 수료중</p>
-            <p><i id="tech-icon" class="fa-brands fa-sketch"></i>&nbsp;<b>TECH</b><br />
-            Javascript, React, HTML5, CSS3, Figma</p>
-            <nav><a href="#project"><i class="fa-solid fa-arrow-down"></i>&nbsp;프로젝트</a></nav>
+            <p class="name">CHOI<br />YEON SUNG</p>
+            <p class="self">웹 프론트엔드 개발을 공부하고 있는<br /> 개발자 지망생 최연성입니다.</p>
+            <div class="license">
+                <p>
+                    <i>2021.06.25</i>&nbsp;&nbsp;&nbsp;SQLD 취득</p>
+                <p>
+                    <i>2023.11.07~</i> 영진직업전문학교 Open API를 활용한 스마트 웹&앱 과정 수료중</p>
+            </div>
+            <div class="tech">
+                <p><i id="tech-icon" class="fa-brands fa-sketch"></i>&nbsp;TECH</p>
+                <div class="tech-img">
+                    <img src="https://camo.githubusercontent.com/34f331f600819b3b7a20c9629f2db8a3137ad784b69c7151cc8c1d4363558c2d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f48544d4c352d4533344632363f7374796c653d666c61742d737175617265266c6f676f3d48544d4c35266c6f676f436f6c6f723d7768697465" alt="html5" />
+                    <img src="https://camo.githubusercontent.com/879d60284f8f6a771cc177f7acbb404e9ca48d1c02462b485fb22e7cc5440beb/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f435353332d3135373242363f7374796c653d666c61742d737175617265266c6f676f3d43535333266c6f676f436f6c6f723d7768697465" alt="css3" />
+                    <img src="https://camo.githubusercontent.com/ce21ebbc314d2b3bdfa0ee55209ec9f6a691d0cd4513f2e00db71fce186fa630/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a6176615363726970742d4637444631453f7374796c653d666c61742d737175617265266c6f676f3d6a617661736372697074266c6f676f436f6c6f723d7768697465" alt="javascript" />
+                    <img src="https://camo.githubusercontent.com/c86d391bb5b58829613888b06fdde85634be0e4e87eca17817e511051de2e0da/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f52656163742d3631444146423f7374796c653d666c61742d737175617265266c6f676f3d7265616374266c6f676f436f6c6f723d7768697465" alt="react" />
+                    <img src="https://camo.githubusercontent.com/d6925f3742651fda3e9cbf2e7ead1adcc347ea84b49eb9faf8af4a7e4195e592/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4669676d612d4632344531453f7374796c653d666c61742d737175617265266c6f676f3d6669676d61266c6f676f436f6c6f723d7768697465" alt="figma" />
+                </div>
+            </div>
         </div>
+        <nav><a href="#self-project"><i class="fa-solid fa-arrow-down"></i>&nbsp;프로젝트</a></nav>
     </section>
-    <!-- 섹션-2 프로젝트 -->
-    <section id="project">
+    <!-- 섹션-2 개인 프로젝트 -->
+    <section id="self-project">
         <div id="bg-gradient"></div>
         <div class="container">
-            
+            <article id="self-project-1">
+                <img src="image/guild.png" alt="maple-guild"/>
+            </article>
+        </div>
+    </section>
+    <section id="team-project">
+        <div id="bg-gradient"></div>
+        <div class="container">
+            팀프로젝트 영역
+        </div>
+    </section>
+    <section id="school-project">
+        <div id="bg-gradient"></div>
+        <div class="container">
+            학원프로젝트 영역
         </div>
     </section>
     <section id="ask">
         <div class="container">
+            문의 영역
         </div>
     </section>
     <!-- 푸터 -->

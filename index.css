@@ -1,52 +1,55 @@
 @font-face {
-    font-family: 'Sejonghospital';
-    src: url('font/Sejong\ hospital\ Light.ttf') format('truetype');
-}
-@font-face {
-    font-family: 'NanumSquareNeo-Variable';
-    src: url('font/NanumSquareNeo-bRg.ttf') format('truetype');
-}
-@font-face {
-    font-family: 'SOYOMapleBoldTTF';
-    src: url('font/SOYO\ Maple\ Regular.ttf') format('truetype');
-}
-@font-face {
-    font-family: 'SUITE-Regular';
-    src: url('font/SUITE-Regular.ttf') format('truetype');
-}
-@font-face {
     font-family: 'SUIT-Regular';
     src: url('font/SUIT-Regular.ttf') format('truetype');
 }
-* {margin: 0; padding: 0; box-sizing: border-box; list-style: none; font-family: 'SUIT-Regular', "Noto Sans KR", sans-serif; color: #353535;}
+* {margin: 0; padding: 0; box-sizing: border-box; list-style: none; 
+    font-family: 'SUIT-Regular', "Noto Sans KR", sans-serif; color: #353535;}
 a {text-decoration: none; color: inherit;}
-:root {
-    --font-transition: font-size 1s ease;
-}
+:root {--font-transition: font-size 1s ease;}
 
 /* 헤더 */
 #header {
-    position: fixed; top: 0; left: 50%; transform: translateX(-50%); z-index: 999;
+    position: fixed; z-index: 999;
+    top: 0; left: 50%; transform: translateX(-50%);
     width: 100%; max-width: 1024px; padding: 1rem;
     display: flex; flex-direction: column;
     font-size: 1.375rem;}
 #header #logo-nav > #toggle-icon {cursor: pointer;}
 #header #logo-nav {display: flex; justify-content: space-between; align-items: center;}
 #header #menu-nav {display: none;}
-#header #menu-nav a {display: block; padding-top: 1rem;}
-#header #menu-nav ul {display: flex; justify-content: space-between;}
+#header #menu-nav > ul > li > a {display: block; padding-top: 1rem;}
+#header #menu-nav > ul {display: flex;}
+#header #menu-nav > ul > li {flex-grow: 1; text-align: center;}
+#header #menu-nav > ul > li:nth-child(2) {position: relative;}
+/* 서브메뉴 */
+#header .sub-menu {width: 100%; display: none; position: absolute; font-size: 1rem; background-color: white;}
+#header .sub-menu li:hover {background-color: #fbc2eb;}
+#header .sub-menu a {display: block; padding: 0.5rem 0; }
+/* 미디어쿼리 640px */
 @media screen and (min-width: 640px) {
 #header {flex-direction: row; justify-content: space-between;}
-#header #logo-nav > i {display: none;}
-#header #menu-nav a {padding-top: 0; padding-left: 5rem;}
+#header #logo-nav > #toggle-icon {display: none;}
+#header #menu-nav > ul > li > a {padding-top: 0; padding: 0 2rem;}
 #header #menu-nav {display: block !important;}
 }
 
 /* 섹션 공통 */
-section {width: 100%; height: 100vh; position: relative;}
-.container {width: 100%; max-width: 1024px; height: 100%; margin: 0 auto; padding: 0 1rem; position: relative;}
+section {width: 100%; height: 100vh; position: relative;
+display: flex; align-items: center;}
+.container {width: 100%; height: 100%; max-width: 1024px;
+    margin: 0 auto; padding: 0 1rem; position: relative;
+    display: flex; flex-direction: column;}
+#bg-gradient {width: 100%; height: 60%;
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background: linear-gradient(-45deg, #84fab0, #8fd3f4, #fbc2eb, #8fd3f4);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+    -webkit-clip-path: polygon(0 0, 100% 20%, 100% 80%, 0 100%);
+    clip-path: polygon(0 0, 100% 20%, 100% 80%, 0 100%);
+}
 
 /* 섹션-1 소개 */
+#intro .container {height: 70%; justify-content: space-evenly;}
 #intro {
     background: linear-gradient(-45deg, #84fab0, #8fd3f4, #fbc2eb, #8fd3f4);
     background-size: 400% 400%; 
@@ -55,14 +58,14 @@ section {width: 100%; height: 100vh; position: relative;}
     0% {background-position: 0% 50%;}
     50% {background-position: 100% 50%;}
     100% {background-position: 0% 50%;}}
-#intro .container {display: flex; flex-direction: column; justify-content: center;}
-#intro p:nth-child(1) {font-size: 3rem; font-weight: bold; transition: var(--font-transition);}
-#intro p:nth-child(2) {font-size: 1.25rem; padding: 1rem 0; transition: var(--font-transition);}
-#intro p:nth-child(3) {padding: 1rem 0 0.25rem 0; transition: var(--font-transition)}
-#intro p:nth-child(4) {padding: 0 0 3rem 0; transition: var(--font-transition)}
-#intro p:nth-child(5) {padding: 1rem 0; text-align: end; transition: var(--font-transition)}
-#intro p:nth-child(5) > b {font-size: 1.25rem; transition: var(--font-transition)}
+#intro .name {font-size: 3rem; font-weight: bold; transition: var(--font-transition);}
+#intro .self {font-size: 1.25rem; transition: var(--font-transition);}
+#intro .license {transition: var(--font-transition)}
+#intro .tech {text-align: end; transition: var(--font-transition)}
+#intro .tech > p {font-size: 1.25rem; padding-bottom: 0.5rem; transition: var(--font-transition)}
 #tech-icon {font-size: 1.25rem; animation: rotateTech 3s ease infinite;}
+#tech-img {display: flex; align-items: center;}
+#tech-img > img {width: 1rem; height: 0.5rem;}
 @keyframes rotateTech {
     0% {transform: rotateY(0deg);}
     50% {transform: rotateY(180deg);}
@@ -71,23 +74,23 @@ section {width: 100%; height: 100vh; position: relative;}
     position: absolute; bottom: 1rem; right: 1rem;}
 #intro nav i {transform: rotate(40deg);}
 @media screen and (min-width: 640px) {
-    #intro p:nth-child(1) {font-size: 6rem;}
-    #intro p:nth-child(2) {font-size: 1.5rem;}
-    #intro p:nth-child(3), #intro p:nth-child(4) {font-size: 1.125rem;}
-    #intro p:nth-child(5) {font-size: 1.375rem;}
-    #intro p:nth-child(5) > b {font-size: 1.5rem;}
+    #intro .container {height: 80%;}
+    #intro .name {font-size: 6rem;}
+    #intro .self {font-size: 1.5rem;}
+    #intro .license {font-size: 1.125rem;}
+    #intro .tech > p {font-size: 1.5rem;}
     #tech-icon{font-size: 1.5rem;}
     #intro nav {font-size: 2rem;}
 }
 
-/* 섹션-2 프로젝트 */
-#bg-gradient {width: 100%; height: 60%;
-    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-    background: linear-gradient(-45deg, #84fab0, #8fd3f4, #fbc2eb, #8fd3f4);
-    background-size: 400% 400%;
-    animation: gradient 5s ease infinite;
-    -webkit-clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
-    clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+/* 섹션-2 개인프로젝트 */
+#self-project .container {height: 70%}
+#self-project #self-project-1 img {max-width: 200px; border-radius: 10px;}
+
+/* 섹션-3 팀프로젝트 */
+#team-project #bg-gradient {
+    -webkit-clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
 }
 
 
