@@ -43,7 +43,7 @@ a {text-decoration: none; color: inherit;}
 }
 
 /* 섹션 공통 */
-section {width: 100%; height: 100vh;}
+section {width: 100%; height: 100vh; position: relative;}
 .container {width: 100%; max-width: 1024px; height: 100%; margin: 0 auto; padding: 0 1rem; position: relative;}
 
 /* 섹션-1 소개 */
@@ -58,9 +58,11 @@ section {width: 100%; height: 100vh;}
 #intro .container {display: flex; flex-direction: column; justify-content: center;}
 #intro p:nth-child(1) {font-size: 3rem; font-weight: bold; transition: var(--font-transition);}
 #intro p:nth-child(2) {font-size: 1.25rem; padding: 1rem 0; transition: var(--font-transition);}
-#intro p:nth-child(3) {padding: 1rem 0; text-align: end;}
-#intro p:nth-child(3) > b {font-size: 1.125rem;}
-#tech-icon {animation: rotateTech 3s ease infinite;}
+#intro p:nth-child(3) {padding: 1rem 0 0.25rem 0; transition: var(--font-transition)}
+#intro p:nth-child(4) {padding: 0 0 3rem 0; transition: var(--font-transition)}
+#intro p:nth-child(5) {padding: 1rem 0; text-align: end; transition: var(--font-transition)}
+#intro p:nth-child(5) > b {font-size: 1.25rem; transition: var(--font-transition)}
+#tech-icon {font-size: 1.25rem; animation: rotateTech 3s ease infinite;}
 @keyframes rotateTech {
     0% {transform: rotateY(0deg);}
     50% {transform: rotateY(180deg);}
@@ -71,10 +73,23 @@ section {width: 100%; height: 100vh;}
 @media screen and (min-width: 640px) {
     #intro p:nth-child(1) {font-size: 6rem;}
     #intro p:nth-child(2) {font-size: 1.5rem;}
-    #intro p:nth-child(3) {font-size: 1.375rem;}
-    #intro p:nth-child(3) > b {font-size: 1.5rem;}
+    #intro p:nth-child(3), #intro p:nth-child(4) {font-size: 1.125rem;}
+    #intro p:nth-child(5) {font-size: 1.375rem;}
+    #intro p:nth-child(5) > b {font-size: 1.5rem;}
+    #tech-icon{font-size: 1.5rem;}
     #intro nav {font-size: 2rem;}
 }
+
+/* 섹션-2 프로젝트 */
+#bg-gradient {width: 100%; height: 60%;
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    background: linear-gradient(-45deg, #84fab0, #8fd3f4, #fbc2eb, #8fd3f4);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+    -webkit-clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+    clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+}
+
 
 /* 푸터 */
 #footer {position: relative; overflow: hidden;
