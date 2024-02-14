@@ -102,6 +102,12 @@ display: flex; align-items: center;}
     clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 80%);
 }
 
+/* 섹션-5 문의 */
+#ask #bg-gradient {
+    -webkit-clip-path: none;
+    clip-path: none;
+}
+
 
 /* 푸터 */
 #footer {position: relative; overflow: hidden;
