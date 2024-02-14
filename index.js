@@ -3,11 +3,21 @@ $(document).ready(function() {
     $("#toggle-icon").click(function(){
         $("#menu-nav").fadeToggle();
     });
-// 호버시 서브메뉴
-    $('#menu-nav ul li').hover(function() {
+// 호버 이벤트
+    $('#menu-nav ul li').mouseenter(function() {
         $(this).find('.sub-menu').stop().slideDown(200);
-    }, function() {
+    }).mouseleave(function() {
         $(this).find('.sub-menu').stop().slideUp(200);
+    });
+    // 클릭 이벤트
+    $('#menu-nav ul li').click(function() {
+        let subMenu = $(this).find('.sub-menu');
+        // 서브메뉴가 열려있으면 닫고, 아니면 열기
+        if (subMenu.is(':visible')) {
+            subMenu.stop().slideUp(200);
+        } else {
+            subMenu.stop().slideDown(200);
+        }
     });
    // 서브메뉴 클릭시 닫기
     $('#menu-nav').on('click', '.sub-menu ul li', function() {
