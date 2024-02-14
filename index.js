@@ -5,13 +5,13 @@ $(document).ready(function() {
     });
 // 호버시 서브메뉴
     $('#menu-nav ul li').hover(function() {
-        $(this).find('.sub-menu').stop().slideDown(300);
+        $(this).find('.sub-menu').stop().slideDown(200);
     }, function() {
-        $(this).find('.sub-menu').stop().slideUp(300);
+        $(this).find('.sub-menu').stop().slideUp(200);
     });
-// 서브메뉴 클릭시 닫기
-    $('#menu-nav ul li').click(function() {
-        $(this).find('.sub-menu').stop().slideUp(300);
+   // 서브메뉴 클릭시 닫기
+    $('#menu-nav').on('click', '.sub-menu ul li', function() {
+        $(this).closest('.sub-menu').stop().slideUp(200);
     });
 // 스크롤 부드럽게
     $('nav a').click(function(e){
