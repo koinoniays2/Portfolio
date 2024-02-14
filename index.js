@@ -1,4 +1,9 @@
 $(document).ready(function() {
+// 스크롤 부드럽게
+    $('nav a').click(function(e){
+        $.scrollTo(this.hash || 0, 400); // 속도 조절, 숫자가 작을수록 빠름
+        e.preventDefault();
+    });
 // 토글 클릭시 페이드인
     $("#toggle-icon").click(function(){
         $("#menu-nav").fadeToggle();
@@ -24,6 +29,16 @@ $(document).ready(function() {
                 $('#menu-nav .sub-menu li').removeClass('active');
             }, 300);
     });
+// 서브메뉴 클릭시 닫기
+    $('#menu-nav').on('click touchstart', '.sub-menu ul li', function() {
+        $(this).closest('.sub-menu').stop().slideUp(200);
+    });
+// 다른 곳 클릭시 닫기
+    $(document).on('click touchstart', function(event) {
+        if (!$(event.target).closest('#menu-nav ul li').length) {
+            $('#menu-nav ul li .sub-menu').stop().slideUp(200);
+        }
+    });
 /* 
 //서브메뉴 클릭 이벤트
     $('#menu-nav ul li').click(function() {
@@ -35,16 +50,6 @@ $(document).ready(function() {
             subMenu.stop().slideDown(200);
         }
     });*/
-// 서브메뉴 클릭시 닫기
-    $('#menu-nav').on('click touchstart', '.sub-menu ul li', function() {
-        $(this).closest('.sub-menu').stop().slideUp(200);
-    });
-// 다른 곳 클릭시 닫기
-    $(document).click(function(event) {
-        if (!$(event.target).closest('#menu-nav ul li').length) {
-            $('#menu-nav ul li .sub-menu').stop().slideUp(200);
-        }
-    });
 /*
 // 마우스 호버
     $('#menu-nav ul li').mouseenter(function() {
@@ -58,9 +63,4 @@ $(document).ready(function() {
         $(this).find('.sub-menu').stop().slideUp(200);
     });
 */
-// 스크롤 부드럽게
-    $('nav a').click(function(e){
-        $.scrollTo(this.hash || 0, 400); // 속도 조절, 숫자가 작을수록 빠름
-        e.preventDefault();
-    });
 });
