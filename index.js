@@ -18,14 +18,13 @@ $(document).ready(function() {
         });
 // 모바일 기기인 경우 클릭을 통해 서브메뉴를 표시
     } else {
-        $('#menu-nav ul li').click(function() { // li 전체에 클릭이벤트 적용으로 토글
-            $(this).find('.sub-menu').stop().slideToggle(200);
+        $('#menu-nav ul li').click(function() {
+            if($('.sub-menu').is(':visible')) {
+                $('.sub-menu').slideUp(200);
+            }else {
+                $(this).find('.sub-menu').slideDown(200);
+            }
         });
-    // 다른 곳을 클릭했을 때 닫기
-    $(document).on('click', function(event) {
-        if (!$(event.target).closest('#menu-nav').length) { // 클릭 요소가 메뉴안이 아니면
-            $('#menu-nav .sub-menu').slideUp(200); // 서브메뉴 닫기
-        }
-    });
+
     }
 });
