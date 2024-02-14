@@ -162,7 +162,7 @@ ABOUT
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
+  /* text-fill-color: transparent; */
 }
 #about p {
     margin-bottom: 2rem;
@@ -219,7 +219,7 @@ SPEAKERS
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-fill-color: transparent;
+  /* text-fill-color: transparent; */
 }
 #speakers h3 {
     font-size: 1.5rem;
