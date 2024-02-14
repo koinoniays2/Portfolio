@@ -45,6 +45,7 @@ display: flex; align-items: center;}
     animation: gradient 5s ease infinite;
     -webkit-clip-path: polygon(0 0, 100% 20%, 100% 80%, 0 100%);
     clip-path: polygon(0 0, 100% 20%, 100% 80%, 0 100%);
+    z-index: -99;
 }
 
 /* 섹션-1 소개 */
