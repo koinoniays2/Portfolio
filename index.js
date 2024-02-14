@@ -8,6 +8,7 @@ $(document).ready(function() {
     $("#toggle-icon").click(function(){
         $("#menu-nav").fadeToggle();
     });
+
 // 데스크톱 브라우저인 경우 마우스 호버를 통해 서브메뉴를 표시
     if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         $('#menu-nav ul li').mouseenter(function() {
@@ -17,50 +18,14 @@ $(document).ready(function() {
         });
 // 모바일 기기인 경우 클릭을 통해 서브메뉴를 표시
     } else {
-        $('#menu-nav ul li').click(function() {
-            let subMenu = $(this).find('.sub-menu');
-            subMenu.stop().slideToggle(200);
+        $('#menu-nav ul li').click(function() { // li 전체에 클릭이벤트 적용으로 토글
+            $(this).find('.sub-menu').stop().slideToggle(200);
         });
+    // 다른 곳을 클릭했을 때 닫기
+    $(document).on('click', function(event) {
+        if (!$(event.target).closest('#menu-nav').length) { // 클릭 요소가 메뉴안이 아니면
+            $('#menu-nav .sub-menu').slideUp(200); // 서브메뉴 닫기
+        }
+    });
     }
-// 클릭 & 터치시 배경색 적용
-    $('#menu-nav .sub-menu li').on('click touchstart', function() {
-        $(this).addClass('active');
-            setTimeout(function() {
-                $('#menu-nav .sub-menu li').removeClass('active');
-            }, 300);
-    });
-// 서브메뉴 클릭시 닫기
-    $('#menu-nav').on('click touchstart', '.sub-menu ul li', function() {
-        $(this).closest('.sub-menu').stop().slideUp(200);
-    });
-// 다른 곳 클릭시 닫기
-    $(document).on('click touchstart', function(event) {
-        if (!$(event.target).closest('#menu-nav ul li').length) {
-            $('#menu-nav ul li .sub-menu').stop().slideUp(200);
-        }
-    });
-/* 
-//서브메뉴 클릭 이벤트
-    $('#menu-nav ul li').click(function() {
-        let subMenu = $(this).find('.sub-menu');
-        // 서브메뉴가 열려있으면 닫고, 아니면 열기
-        if (subMenu.is(':visible')) {
-            subMenu.stop().slideUp(200);
-        } else {
-            subMenu.stop().slideDown(200);
-        }
-    });*/
-/*
-// 마우스 호버
-    $('#menu-nav ul li').mouseenter(function() {
-        let subMenu = $(this).find('.sub-menu');
-        if (!subMenu.is(':visible')) {
-            subMenu.stop().slideDown(200);
-        }
-    })
-// 마우스가 벗어나면 닫기
-    $('#menu-nav ul li').mouseleave(function() {
-        $(this).find('.sub-menu').stop().slideUp(200);
-    });
-*/
 });
