@@ -3,23 +3,27 @@ $(document).ready(function() {
     $("#toggle-icon").click(function(){
         $("#menu-nav").fadeToggle();
     });
-// 데스크톱 브라우저인 경우
+// 데스크톱 브라우저인 경우 마우스 호버를 통해 서브메뉴를 표시
     if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        // 마우스 호버를 통해 서브메뉴를 표시
         $('#menu-nav ul li').mouseenter(function() {
-            let subMenu = $(this).find('.sub-menu');
-            subMenu.stop().slideDown(200);
+            $(this).find('.sub-menu').stop().slideDown(200);
         }).mouseleave(function() {
-            let subMenu = $(this).find('.sub-menu');
-            subMenu.stop().slideUp(200);
+            $(this).find('.sub-menu').stop().slideUp(200);
         });
+// 모바일 기기인 경우 클릭을 통해 서브메뉴를 표시
     } else {
-        // 모바일 기기인 경우 클릭을 통해 서브메뉴를 표시
         $('#menu-nav ul li').click(function() {
             let subMenu = $(this).find('.sub-menu');
             subMenu.stop().slideToggle(200);
         });
     }
+// 클릭 & 터치시 배경색 적용
+    $('#menu-nav .sub-menu li').on('click touchstart', function() {
+        $(this).addClass('active');
+            setTimeout(function() {
+                $('#menu-nav .sub-menu li').removeClass('active');
+            }, 300);
+    });
 /* 
 //서브메뉴 클릭 이벤트
     $('#menu-nav ul li').click(function() {
@@ -32,7 +36,7 @@ $(document).ready(function() {
         }
     });*/
 // 서브메뉴 클릭시 닫기
-    $('#menu-nav').on('click', '.sub-menu ul li', function() {
+    $('#menu-nav').on('click touchstart', '.sub-menu ul li', function() {
         $(this).closest('.sub-menu').stop().slideUp(200);
     });
 // 다른 곳 클릭시 닫기
