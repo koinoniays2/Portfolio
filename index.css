@@ -22,6 +22,7 @@ a {text-decoration: none; color: inherit;}
 #header #menu-nav > ul {display: flex;}
 #header #menu-nav > ul > li {flex-grow: 1; text-align: center;}
 #header #menu-nav > ul > li:nth-child(2) {position: relative;}
+#project-btn {font-size: 1.25rem; padding-left: 0.25rem;}
 /* 서브메뉴 */
 #header .sub-menu {width: 100%; display: none; position: absolute; font-size: 1rem; background-color: white;}
 #header .sub-menu li:hover {background-color: #fbc2eb;}
@@ -32,8 +33,7 @@ a {text-decoration: none; color: inherit;}
 #header #logo-nav > #toggle-icon {display: none;}
 #header #menu-nav > ul > li > a {padding-top: 0; padding: 0 2rem;}
 #header #menu-nav > ul > li > p {padding-top: 0; padding: 0 2rem;}
-#header #menu-nav {display: block !important;}
-}
+#header #menu-nav {display: block !important;}}
 
 /* 섹션 공통 */
 section {width: 100%; height: 100vh; position: relative;
