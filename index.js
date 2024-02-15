@@ -4,21 +4,28 @@ $(document).ready(function () {
         $.scrollTo(this.hash || 0, 400); // 속도 조절, 숫자가 작을수록 빠름
         e.preventDefault();
     });
-// 토글 클릭시 페이드인
+// 토글 클릭시 슬라이드
     $("#toggle-icon").click(function () {
-        $("#menu-nav").fadeToggle();
+        $("#menu-nav").slideToggle(200);
     });
 
-// 데스크톱 브라우저인 경우 마우스 호버를 통해 서브메뉴를 표시, 호버시 배경색 변경
+    function setBackWhite() {
+        $('#header').css('background-color', '#ffffff');
+        $('.sub-menu').css('background-color', '#ffffff');}
+    function setBackOrigin() {
+        $('#header').css('background-color', '');
+        $('.sub-menu').css('background-color', '');}
+
+// 데스크톱 브라우저인 경우 마우스 호버를 통해 서브메뉴를 표시, 호버시 헤더 및 서브메뉴 배경색 변경
     if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         $('#menu-nav ul li').mouseenter(function () {
             $(this).find('.sub-menu').stop().slideDown(300);
-            $('#header').css('background-color', 'white');
+            setBackWhite();
         }).mouseleave(function () {
-            $(this).find('.sub-menu').stop().slideUp(300);
-            $('#header').css('background-color', '');
+            $(this).find('.sub-menu').stop().hide();
+            setBackOrigin();
         });
-        
+// 서브메뉴 호버시 li 백그라운드
         $('#header .sub-menu li').hover(function() {
             $(this).css('background-color', '#fbc2eb');
         }, function() {
@@ -38,30 +45,27 @@ $(document).ready(function () {
             }
         });
     }
-
-// 스크롤이 발생하면 메뉴 닫기
+// 스크롤이 발생하면 메뉴 닫기(모바일에서만)
     let scrollTimeout;
     $(window).scroll(function() {
-// 스크롤이 멈추면 1.5초 후 배경색 돌아옴
+// 스크롤이 멈추면 1초 후 배경색 돌아옴
         clearTimeout(scrollTimeout);
         scrollTimeout = setTimeout(function() {
-            const windowWidth = $(window).width();
-            if (windowWidth <= 640) {
-                $('#menu-nav').slideUp(300);
-            }
             $('#header').css('background-color', '');
-        }, 150);
-// 스크롤 중일 때 즉시 배경색 변경
-        $('.sub-menu').slideUp(300);
-        $('#header').css('background-color', 'white');
+        }, 100);
+        const windowWidth = $(window).width();
+        if (windowWidth <= 640) {
+            $('#menu-nav').hide();
+            $('.sub-menu').hide();
+        }
     });
 // 토글 클릭시 헤더 백그라운드
     $('#toggle-icon').click(function() {
         const headerBackgroundColor = $('#header').css('background-color');
         if (headerBackgroundColor === 'rgb(255, 255, 255)' || headerBackgroundColor === '#ffffff') {
-            $('#header').css('background-color', '');
+            setBackOrigin();
         } else {
-            $('#header').css('background-color', '#ffffff');
+            setBackWhite();
         }
     });
 });
